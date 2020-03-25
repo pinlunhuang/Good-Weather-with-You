@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4D109E6242B27E40083191B /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D109E5242B27E40083191B /* WeatherManager.swift */; };
 		E4E57F11242A51530056B73F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E57F10242A51530056B73F /* AppDelegate.swift */; };
 		E4E57F13242A51530056B73F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E57F12242A51530056B73F /* SceneDelegate.swift */; };
 		E4E57F15242A51530056B73F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E57F14242A51530056B73F /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E4D109E5242B27E40083191B /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		E4E57F0D242A51530056B73F /* Good Weather with You.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Good Weather with You.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4E57F10242A51530056B73F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4E57F12242A51530056B73F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		E426E591242B05E800B58777 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E4D109E5242B27E40083191B /* WeatherManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			files = (
 				E4E57F15242A51530056B73F /* ViewController.swift in Sources */,
 				E4E57F11242A51530056B73F /* AppDelegate.swift in Sources */,
+				E4D109E6242B27E40083191B /* WeatherManager.swift in Sources */,
 				E4E57F13242A51530056B73F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
