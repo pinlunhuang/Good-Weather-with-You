@@ -9,7 +9,8 @@
 import Foundation
 
 protocol WeatherManagerDelegate {
-    func didUpdateWeather(weather: WeatherModel)
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel)
+    func didFailWithError(error: Error)
 }
 
 struct WeatherManager {
@@ -20,22 +21,22 @@ struct WeatherManager {
     
     func getWeather(city: String) {
         let url = "\(apiURL)&q=\(city)"
-        sendRequest(urlString: url)
+        sendRequest(with: url)
     }
     
-    func sendRequest(urlString: String) {
+    func sendRequest(with urlString: String) {
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {
-                    print(error!)
+                    self.delegate?.didFailWithError(error: error!)
                     return
                 }
                 
                 if let responseData = data {
-                    if let weather = self.parseJsonData(weatherData: responseData) {
-                        self.delegate?.didUpdateWeather(weather: weather)
+                    if let weather = self.parseJsonData(responseData) {
+                        self.delegate?.didUpdateWeather(self, weather: weather)
                     }
                 }
             }
@@ -43,7 +44,7 @@ struct WeatherManager {
         }
     }
     
-    func parseJsonData(weatherData: Data) -> WeatherModel? {
+    func parseJsonData(_ weatherData: Data) -> WeatherModel? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
@@ -54,7 +55,7 @@ struct WeatherManager {
             let weather = WeatherModel(conditionId: id, cityName: name, temp: temp)
             return weather
         } catch {
-            print(error)
+            delegate?.didFailWithError(error: error)
             return nil
         }
     }
