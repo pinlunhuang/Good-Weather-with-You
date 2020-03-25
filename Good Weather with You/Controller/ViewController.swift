@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WeatherManagerDeleg
 
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var tempLbl: UILabel!
-    @IBOutlet weak var cithLbl: UILabel!
+    @IBOutlet weak var cityLbl: UILabel!
     
     @IBOutlet weak var searchField: UITextField!
     
@@ -52,7 +52,11 @@ class ViewController: UIViewController, UITextFieldDelegate, WeatherManagerDeleg
     }
     
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
-        print(weather.temp)
+        DispatchQueue.main.async {
+            self.tempLbl.text = weather.tempString
+            self.weatherImage.image = UIImage(systemName: weather.conditionName)
+            self.cityLbl.text = weather.cityName
+        }
     }
     
     func didFailWithError(error: Error) {
