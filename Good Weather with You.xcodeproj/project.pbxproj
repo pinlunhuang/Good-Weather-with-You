@@ -37,6 +37,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E426E590242B05DB00B58777 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E4E57F16242A51530056B73F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E426E591242B05E800B58777 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E426E592242B060D00B58777 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E4E57F14242A51530056B73F /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		E4E57F04242A51520056B73F = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +81,9 @@
 			children = (
 				E4E57F10242A51530056B73F /* AppDelegate.swift */,
 				E4E57F12242A51530056B73F /* SceneDelegate.swift */,
-				E4E57F14242A51530056B73F /* ViewController.swift */,
-				E4E57F16242A51530056B73F /* Main.storyboard */,
+				E426E591242B05E800B58777 /* Model */,
+				E426E590242B05DB00B58777 /* View */,
+				E426E592242B060D00B58777 /* Controller */,
 				E4E57F19242A51540056B73F /* Assets.xcassets */,
 				E4E57F1B242A51540056B73F /* LaunchScreen.storyboard */,
 				E4E57F1E242A51540056B73F /* Info.plist */,
@@ -285,6 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GSS8KW76YU;
 				INFOPLIST_FILE = "Good Weather with You/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +327,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GSS8KW76YU;
 				INFOPLIST_FILE = "Good Weather with You/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
